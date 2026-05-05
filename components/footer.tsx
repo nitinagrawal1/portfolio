@@ -1,18 +1,25 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Phone, MapPin, MessageCircle  } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 
 const sections = [
   {
-    label: "Sections",
+    label: "Menu 1",
     links: [
-      { href: "/", label: "Front Page" },
+      { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/skills", label: "Skills" },
       { href: "/projects", label: "Projects" },
     ],
   },
   {
-    label: "Departments",
+    label: "Explore",
     links: [
       { href: "/experience", label: "Experience" },
       { href: "/education", label: "Education" },
@@ -100,18 +107,18 @@ export function Footer() {
               </li>
 
               <li>
-  <a
-    href="https://wa.me/919983827848"
-    target="_blank"
-    rel="noreferrer"
-    className="group flex items-center gap-3 transition-colors hover:text-accent"
-  >
-    <span className="flex h-9 w-9 flex-none items-center justify-center border border-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
-      <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
-    </span>
-    WhatsApp
-  </a>
-</li>
+                <a
+                  href="https://wa.me/919983827848"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-3 transition-colors hover:text-accent"
+                >
+                  <span className="flex h-9 w-9 flex-none items-center justify-center border border-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
+                    <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
+                  </span>
+                  WhatsApp
+                </a>
+              </li>
               <li>
                 <a
                   href="https://github.com/nitinagrawal1"
