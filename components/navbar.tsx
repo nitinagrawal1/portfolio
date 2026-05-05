@@ -58,7 +58,7 @@ export function Navbar() {
       {/* Masthead */}
       <div className="mx-auto max-w-screen-xl px-4 py-6 sm:py-8">
         <div className="flex items-start justify-between gap-4">
-          <Link href="/" className="block">
+          {/* <Link href="/" className="block">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-500">
               Freelance Web Developer | React | PHP | WordPress
             </p>
@@ -69,7 +69,7 @@ export function Navbar() {
               I build websites, applications, and features based on real project
               needs
             </p>
-          </Link>
+          </Link> */}
 
           <button
             type="button"
