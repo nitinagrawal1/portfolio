@@ -1,7 +1,7 @@
 import { PageHeader, Ornament } from "@/components/page-header";
 import { SectionLabel } from "@/components/news-bits";
 import { ContactForm } from "@/components/contact-form";
-import { Mail, Phone, Linkedin, MapPin, Github, Clock } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin, Github, Clock, MessageCircle  } from "lucide-react";
 
 export const metadata = {
   title: "Contact — Nitin Agrawal",
@@ -22,6 +22,12 @@ const channels = [
     value: "+91 99838 27848",
     href: "tel:+919983827848",
   },
+  {
+  icon: MessageCircle,
+  label: "WhatsApp",
+  value: "+91 99838 27848",
+  href: "https://wa.me/919983827848",
+},
   {
     icon: Linkedin,
     label: "LinkedIn",
@@ -52,7 +58,7 @@ export default function ContactPage() {
             Get in <span className="italic font-normal">touch</span>
           </>
         }
-       lede="I am available for freelance projects. You can reach out to discuss your requirements, ideas, or any web development work."
+        lede="I am available for freelance projects. You can reach out to discuss your requirements, ideas, or any web development work."
         meta="Response time within 24 hours"
       />
 
@@ -66,7 +72,8 @@ export default function ContactPage() {
                 Send a message
               </h2>
               <p className="mt-4 max-w-xl font-body text-base italic leading-relaxed text-neutral-700 sm:text-lg">
-Share your project details or requirements. I will check and respond with next steps.
+                Share your project details or requirements. I will check and
+                respond with next steps.
               </p>
 
               <div className="mt-8 border-t border-foreground pt-8">

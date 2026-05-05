@@ -1,53 +1,61 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Send, Check, ArrowRight } from "lucide-react"
-import { cn } from "@/lib/utils"
+import type React from "react";
+import { useState } from "react";
+import { Send, Check, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle")
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" })
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) {
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   }
 
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault()
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-  if (!form.name || !form.email || !form.message) return
+    if (!form.name || !form.email || !form.message) return;
 
-  setStatus("sending")
+    setStatus("sending");
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    })
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-    const data = await res.json()
+      const data = await res.json();
 
-    if (data.success) {
-      setStatus("sent")
-      setForm({ name: "", email: "", subject: "", message: "" })
-      setTimeout(() => setStatus("idle"), 4000)
-    } else {
-      alert("Something went wrong")
-      setStatus("idle")
+      if (data.success) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        alert("Something went wrong");
+        setStatus("idle");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server error");
+      setStatus("idle");
     }
-  } catch (error) {
-    console.error(error)
-    alert("Server error")
-    setStatus("idle")
   }
-}
-  const labelClass = "font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-600"
+  const labelClass =
+    "font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-600";
   const fieldClass =
-    "w-full border-0 border-b-2 border-foreground bg-transparent px-1 py-2.5 font-mono text-sm text-foreground transition-colors placeholder:text-neutral-400 placeholder:italic focus:bg-neutral-100 focus:outline-none focus-visible:bg-neutral-100"
+    "w-full border-0 border-b-2 border-foreground bg-transparent px-1 py-2.5 font-mono text-sm text-foreground transition-colors placeholder:text-neutral-400 placeholder:italic focus:bg-neutral-100 focus:outline-none focus-visible:bg-neutral-100";
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-7" noValidate>
@@ -158,13 +166,19 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
           aria-live="polite"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
-            <Send className="mr-1 inline h-3 w-3" strokeWidth={1.5} aria-hidden /> Message received
+            <Send
+              className="mr-1 inline h-3 w-3"
+              strokeWidth={1.5}
+              aria-hidden
+            />{" "}
+            Message received
           </p>
           <p className="mt-2 font-serif text-lg font-bold leading-snug">
-           Your message has been received. I will get back to you within 24 hours.
+            Your message has been received. I will get back to you within 24
+            hours.
           </p>
         </div>
       )}
     </form>
-  )
+  );
 }

@@ -175,7 +175,8 @@ I also work on custom features like dynamic pages, CMS setup, and API integratio
             {featured.map((p, i) => (
               <Link
                 key={p.slug}
-                href="/projects"
+                href={p.link || "#"}
+target="_blank"
                 className={`group block p-6 transition-colors hover:bg-neutral-100 sm:p-8 ${
                   i !== featured.length - 1
                     ? "border-b border-foreground md:border-b-0 md:border-r"
@@ -239,7 +240,7 @@ I focus on building simple and useful web solutions that work properly and are e
           </div>
           <h2 className="mt-6 font-serif text-4xl font-black leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
             Tools and Technologies
-            <span className="italic font-normal text-accent">I Use</span>.
+            <span className="italic font-normal text-accent"> I Use</span>.
           </h2>
           <p className="mt-4 max-w-2xl font-body text-base text-neutral-300 sm:text-lg">
 These are the tools I use while working on different projects. I choose them based on what the project requires.
