@@ -10,7 +10,7 @@ import {
 
 const sections = [
   {
-    label: "Menu 1",
+    label: "Menu",
     links: [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },

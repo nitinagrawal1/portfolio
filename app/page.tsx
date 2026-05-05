@@ -34,14 +34,15 @@ export default function HomePage() {
       {/* ============== LEAD ARTICLE ============== */}
       <section className="border-b border-foreground">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:py-16">
-          <div className="flex items-center justify-between gap-4 border-b border-foreground pb-4">
-            <SectionLabel accent>
-              &#x25A0; Breaking — Frontend Desk
-            </SectionLabel>
-            <SectionLabel className="text-neutral-500">
-              Front Page &middot; Sec. A
-            </SectionLabel>
-          </div>
+<div className="flex items-center justify-between gap-4 border-b border-foreground pb-4">
+  <SectionLabel accent>
+    &#x25A0; Portfolio — Web Development
+  </SectionLabel>
+
+  <SectionLabel className="text-neutral-500">
+    Nitin Agrawal &middot; Freelance
+  </SectionLabel>
+</div>
 
           <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12">
             {/* Lede */}
