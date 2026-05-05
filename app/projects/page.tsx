@@ -82,7 +82,7 @@ export default function ProjectsPage() {
                   src="/password-validation.jpg"
                   alt={hero.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
 
